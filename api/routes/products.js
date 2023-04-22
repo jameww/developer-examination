@@ -30,7 +30,13 @@ router.get("/get_item_by_id/:id", async (req, res, next) => {
 
 router.post("/insert_item", async (req, res, next) => {
   try {
-    let products = await Product.create(req.body);
+    const { name, price, quantity, description } = req.body;
+    let products = await Product.create({
+      name: name,
+      price: price,
+      quantity: quantity,
+      description: description,
+    });
     res.json({
       status: "200",
       message: "OK",
