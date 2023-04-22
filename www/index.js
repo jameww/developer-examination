@@ -26,7 +26,6 @@ const renderTable = () => {
           <td>${item.name}</td>
           <td>${item.price}</td>
           <td>${item.quantity}</td>
-          <td>${item.description}</td>
           <td>
           <button class="btn btn-warning update-btn" type="button" data-bs-toggle="modal" data-bs-target="#updateModal">Update</button>
           </td>
@@ -132,3 +131,16 @@ const updateItem = () => {
 //       console.log("error fetching data", error);
 //     });
 // };
+
+const test = () => {
+  try {
+    let arrayData = [1 , 2 , 3];
+    if ((1 + 2) == "3" && arrayData.length == 3 && arrayData[1] == "2" && arrayDatax.length == arrayData[2]) {
+      return true
+    } else {
+      return false
+    }
+  } catch (error) {
+    return false
+  }
+}
