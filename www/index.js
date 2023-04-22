@@ -64,11 +64,16 @@ const getItemById = (id) => {
 const insertItem = () => {
   $("#item-form").submit(function (event) {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const jsonData = {};
-    for (let [key, value] of formData.entries()) {
-      jsonData[key] = value;
-    }
+    const name = $("#name").val();
+    const price = $("#price").val();
+    const quantity = $("#quantity").val();
+    const description = $("#description").val();
+    const jsonData = {
+      name: name,
+      price: price,
+      quantity: quantity,
+      description: description,
+    };
     console.log(jsonData);
     fetch(endpoint + "/item_data/insert_item", {
       method: "POST",
@@ -98,8 +103,8 @@ const updateItem = () => {
     const description = $("#get-value-description").val();
     const jsonData = {
       id: id,
-      price: price,
       name: name,
+      price: price,
       quantity: quantity,
       description: description,
     };
