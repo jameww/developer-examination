@@ -131,16 +131,3 @@ const updateItem = () => {
 //       console.log("error fetching data", error);
 //     });
 // };
-
-const test = () => {
-  try {
-    let arrayData = [1 , 2 , 3];
-    if ((1 + 2) == "3" && arrayData.length == 3 && arrayData[1] == "2" && arrayDatax.length == arrayData[2]) {
-      return true
-    } else {
-      return false
-    }
-  } catch (error) {
-    return false
-  }
-}
