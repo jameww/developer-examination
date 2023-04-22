@@ -7,6 +7,7 @@ $(document).ready(function () {
   insertItem();
   updateItem();
 });
+
 const renderTable = () => {
   fetch(endpoint + "/item_data/get_item")
     .then((response) => response.json())
@@ -42,8 +43,7 @@ const getItemById = (id) => {
   fetch(endpoint + `/item_data/get_item_by_id/${id}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.message);
-      console.log(id);
+      console.log(data);
       document.getElementById("get-id").innerHTML = data.data._id;
       document.getElementById("get-name").innerHTML = data.data.name;
       document.getElementById("get-price").innerHTML = data.data.price;
@@ -58,7 +58,7 @@ const getItemById = (id) => {
         data.data.description;
     })
     .catch((error) => {
-      console.log("error", error);
+      console.log("error fetching data by id", error);
     });
 };
 
@@ -80,7 +80,7 @@ const insertItem = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.message);
+        console.log(data);
         $("#id, #name, #price, #quantity, #description").val("");
       })
       .catch((error) => {
@@ -114,7 +114,7 @@ const updateItem = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.message);
+        console.log(data);
       })
       .catch((error) => {
         console.log("error updating data", error);
